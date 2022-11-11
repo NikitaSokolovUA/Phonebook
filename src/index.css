@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+import-normalize /* bring in normalize.css styles */
 
 body {
   margin: 0;
@@ -31,4 +31,8 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+
+a{
+ text-decoration: none; 
 }
