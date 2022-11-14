@@ -6,9 +6,8 @@ import {
   DeleteBtn,
 } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/operations';
-import { selectFilterContacts } from 'redux/selectors';
-import { fetchContacts } from 'redux/operations';
+import { selectFilterContacts } from 'redux/contacts/selectors';
+import { fetchContacts, deleteContact } from 'redux/contacts/operations';
 import { useEffect } from 'react';
 
 const ContactList = () => {

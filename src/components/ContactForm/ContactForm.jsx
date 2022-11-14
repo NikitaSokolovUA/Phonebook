@@ -2,8 +2,8 @@ import { Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { FormContainer, Input, SubmitButton } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
