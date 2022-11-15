@@ -26,14 +26,19 @@ const EditContactForm = ({ id, toggleModal }) => {
       id,
       credentials,
     };
-    // if (
-    //   contacts.find(
-    //     contact =>
-    //       contact.name.toLowerCase() === InitialValues.name.toLowerCase()
-    //   )
-    // ) {
-    //   return alert(`${InitialValues.name} is already in contact list`);
-    // }
+    const contactsWithoutEdit = contacts.filter(contact => contact.id !== id);
+
+    if (
+      contactsWithoutEdit.find(
+        contact =>
+          contact.name.toLowerCase() ===
+          submitValues.credentials.name.toLowerCase()
+      )
+    ) {
+      return alert(
+        `${submitValues.credentials.nameg} is already in contact list`
+      );
+    }
 
     dispatch(editContact(submitValues));
     toggleModal();
