@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-07-phonebook/static/css/main.8e343162.css",
-    "main.js": "/goit-react-hw-07-phonebook/static/js/main.e004ab18.js",
+    "main.js": "/goit-react-hw-07-phonebook/static/js/main.64dacd09.js",
     "static/js/750.25ec9247.chunk.js": "/goit-react-hw-07-phonebook/static/js/750.25ec9247.chunk.js",
-    "static/js/885.eedc9b1f.chunk.js": "/goit-react-hw-07-phonebook/static/js/885.eedc9b1f.chunk.js",
+    "static/js/720.d3bbbd5f.chunk.js": "/goit-react-hw-07-phonebook/static/js/720.d3bbbd5f.chunk.js",
     "static/js/311.cb3169ad.chunk.js": "/goit-react-hw-07-phonebook/static/js/311.cb3169ad.chunk.js",
     "static/js/980.d634ee89.chunk.js": "/goit-react-hw-07-phonebook/static/js/980.d634ee89.chunk.js",
     "static/js/695.f49e4403.chunk.js": "/goit-react-hw-07-phonebook/static/js/695.f49e4403.chunk.js",
@@ -11,9 +11,9 @@
     "static/js/358.b5d02e83.chunk.js": "/goit-react-hw-07-phonebook/static/js/358.b5d02e83.chunk.js",
     "index.html": "/goit-react-hw-07-phonebook/index.html",
     "main.8e343162.css.map": "/goit-react-hw-07-phonebook/static/css/main.8e343162.css.map",
-    "main.e004ab18.js.map": "/goit-react-hw-07-phonebook/static/js/main.e004ab18.js.map",
+    "main.64dacd09.js.map": "/goit-react-hw-07-phonebook/static/js/main.64dacd09.js.map",
     "750.25ec9247.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/750.25ec9247.chunk.js.map",
-    "885.eedc9b1f.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/885.eedc9b1f.chunk.js.map",
+    "720.d3bbbd5f.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/720.d3bbbd5f.chunk.js.map",
     "311.cb3169ad.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/311.cb3169ad.chunk.js.map",
     "980.d634ee89.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/980.d634ee89.chunk.js.map",
     "695.f49e4403.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/695.f49e4403.chunk.js.map",
@@ -22,6 +22,6 @@
   },
   "entrypoints": [
     "static/css/main.8e343162.css",
-    "static/js/main.e004ab18.js"
+    "static/js/main.64dacd09.js"
   ]
 }
