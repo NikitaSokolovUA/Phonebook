@@ -1,12 +1,15 @@
-import { ContactTitle, MainTitle, AddContactBtn } from './Contacts.styled';
+import { ContactTitle, MainTitle } from './Contacts.styled';
 import ContactForm from 'components/ContactForm';
 import ContactList from 'components/ContactList';
-import Filter from 'components/Filter';
 import { useAuth } from 'hooks/useAuth';
 import NotLoggedInContainer from 'components/NotLoggedInContainer';
 import Container from 'components/Container';
+import { useState } from 'react';
+import Modal from 'components/Modal';
+import EditMenu from 'components/EditMenu';
 
 const Contacts = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const { isLoggedIn } = useAuth();
 
   return (
@@ -14,11 +17,14 @@ const Contacts = () => {
       <Container>
         {isLoggedIn ? (
           <>
-            {/* <MainTitle>PHONEBOOK</MainTitle>
-            <ContactForm /> */}
+            <MainTitle>PHONEBOOK</MainTitle>
+            {modalIsOpen && (
+              <Modal toggleModal={() => setModalIsOpen(!modalIsOpen)}>
+                <ContactForm toggleModal={() => setModalIsOpen(!modalIsOpen)} />
+              </Modal>
+            )}
+            <EditMenu toggleModal={() => setModalIsOpen(!modalIsOpen)} />
             <ContactTitle>CONTACTS</ContactTitle>
-            <AddContactBtn type="button">Add Contact</AddContactBtn>
-            <Filter />
             <ContactList />
           </>
         ) : (

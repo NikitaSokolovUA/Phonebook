@@ -1,6 +1,11 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { FormContainer, Input, SubmitButton } from './ContactForm.styled';
+import {
+  ContactFormTitle,
+  FormContainer,
+  Input,
+  SubmitButton,
+} from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
@@ -10,7 +15,7 @@ const schema = yup.object().shape({
   number: yup.string().required().min(7, 'минимум 7 символов').max(20),
 });
 
-const ContactForm = () => {
+const ContactForm = ({ toggleModal }) => {
   const InitialValues = {
     name: '',
     number: '',
@@ -29,11 +34,13 @@ const ContactForm = () => {
     }
 
     dispatch(addContact(InitialValues));
+    toggleModal();
     resetForm();
   };
 
   return (
     <FormContainer>
+      <ContactFormTitle>Add new contact</ContactFormTitle>
       <Formik
         initialValues={InitialValues}
         validationSchema={schema}

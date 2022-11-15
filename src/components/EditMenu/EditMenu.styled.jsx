@@ -1,19 +1,9 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #dcdcdc;
-`;
-
-export const MainTitle = styled.h1`
-  text-align: center;
-  margin-bottom: 30px;
-  padding-top: 20px;
-  font-size: 40px;
-  letter-spacing: 0.06em;
-  color: #2196f3;
+export const EditContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 
 export const AddContactBtn = styled.button`
@@ -38,13 +28,4 @@ export const AddContactBtn = styled.button`
     box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%),
       0px 2px 2px rgb(0 0 0 / 12%);
   }
-`;
-
-export const ContactTitle = styled.h2`
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  font-size: 30px;
-  letter-spacing: 0.06em;
-  color: #2196f3;
 `;
