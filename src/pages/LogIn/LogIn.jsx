@@ -1,12 +1,19 @@
 import Container from 'components/Container';
+import Footer from 'components/Footer';
 import LogInForm from 'components/LogInForm';
+import { LoginBox, LoginTitle } from './LogIn.styled';
 
 const LogIn = () => {
   return (
-    <Container>
-      <h2>LogIn</h2>
-      <LogInForm />
-    </Container>
+    <>
+      <Container>
+        <LoginBox>
+          <LoginTitle>Login</LoginTitle>
+          <LogInForm />
+        </LoginBox>
+      </Container>
+      <Footer />
+    </>
   );
 };
 

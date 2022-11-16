@@ -12,7 +12,7 @@ import { addContact } from 'redux/contacts/operations';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
-  number: yup.string().required().min(7, 'минимум 7 символов').max(20),
+  number: yup.string().required().min(7, 'min 7 symbols').max(20),
 });
 
 const ContactForm = ({ toggleModal }) => {

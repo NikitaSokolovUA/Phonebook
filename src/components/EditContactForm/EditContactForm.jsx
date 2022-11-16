@@ -36,7 +36,7 @@ const EditContactForm = ({ id, toggleModal }) => {
       )
     ) {
       return alert(
-        `${submitValues.credentials.nameg} is already in contact list`
+        `${submitValues.credentials.name} is already in contact list`
       );
     }
 

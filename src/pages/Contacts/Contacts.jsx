@@ -7,6 +7,7 @@ import Container from 'components/Container';
 import { useState } from 'react';
 import Modal from 'components/Modal';
 import EditMenu from 'components/EditMenu';
+import Footer from 'components/Footer';
 
 const Contacts = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -31,6 +32,7 @@ const Contacts = () => {
           <NotLoggedInContainer />
         )}
       </Container>
+      <Footer />
     </>
   );
 };

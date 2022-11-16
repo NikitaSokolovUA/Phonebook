@@ -1,12 +1,22 @@
-import { Formik, Form } from 'formik';
-import { SubmitButton, Input, LogForm } from './LogInForm.styled';
+import { Formik, Form, ErrorMessage } from 'formik';
+import {
+  SubmitButton,
+  Input,
+  LogForm,
+  InputTitle,
+  ErrorMsg,
+} from './LogInForm.styled';
 import * as yup from 'yup';
 import { login } from 'redux/auth/operation';
 import { useDispatch } from 'react-redux';
 
 const schema = yup.object().shape({
-  email: yup.string().required(),
-  password: yup.string().required().min(8).max(16),
+  email: yup.string().required('Input Email'),
+  password: yup
+    .string()
+    .required('Password is Required')
+    .min(8, 'min 8 symbols')
+    .max(16),
 });
 
 const LogInForm = () => {
@@ -25,10 +35,20 @@ const LogInForm = () => {
         onSubmit={handleSubmit}
       >
         <Form>
-          <p>Email</p>
+          <InputTitle>Email</InputTitle>
           <Input type="email" name="email" />
-          <p>Password</p>
+          <ErrorMessage
+            render={msg => <ErrorMsg>{msg}</ErrorMsg>}
+            name="email"
+          />
+
+          <InputTitle>Password</InputTitle>
           <Input type="password" name="password" />
+          <ErrorMessage
+            render={msg => <ErrorMsg>{msg}</ErrorMsg>}
+            name="password"
+          />
+
           <SubmitButton>Log In</SubmitButton>
         </Form>
       </Formik>

@@ -1,5 +1,4 @@
 import AuthNav from 'components/AuthNav';
-import Container from 'components/Container';
 import UserMenu from 'components/UserMenu';
 import { useAuth } from 'hooks/useAuth';
 import { Outlet } from 'react-router-dom';
@@ -10,13 +9,11 @@ const Navigation = () => {
 
   return (
     <>
-      <Container>
-        <Header>
-          <Link to={'/contacts'}>Contacts </Link>
+      <Header>
+        <Link to={'/contacts'}>Contacts </Link>
 
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
-        </Header>
-      </Container>
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      </Header>
       <Outlet />
     </>
   );
