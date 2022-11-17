@@ -1,4 +1,5 @@
 import { Formik, Form, ErrorMessage } from 'formik';
+import PropTypes from 'prop-types';
 import * as yup from 'yup';
 import {
   ContactFormTitle,
@@ -60,3 +61,7 @@ const ContactForm = ({ toggleModal }) => {
 };
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
+};

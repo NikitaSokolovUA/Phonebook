@@ -5,4 +5,5 @@ export const Cont = styled.div`
   margin-left: auto;
   margin-right: auto;
   height: calc(100vh - 120px);
+  padding: 0 15px;
 `;

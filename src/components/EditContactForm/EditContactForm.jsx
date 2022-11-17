@@ -1,4 +1,5 @@
 import { Formik, Form, ErrorMessage } from 'formik';
+import PropTypes from 'prop-types';
 import { useContact } from 'hooks/useContact';
 import { useDispatch, useSelector } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
@@ -67,3 +68,8 @@ const EditContactForm = ({ id, toggleModal }) => {
 };
 
 export default EditContactForm;
+
+EditContactForm.propTypes = {
+  id: PropTypes.string.isRequired,
+  toggleModal: PropTypes.func.isRequired,
+};

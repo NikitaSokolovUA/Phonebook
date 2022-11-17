@@ -1,4 +1,5 @@
 import { Overlay, ModalWindow, CloseBtn } from './Modal.styled';
+import { PropTypes } from 'prop-types';
 import { GrFormClose } from 'react-icons/gr';
 import { useEffect } from 'react';
 
@@ -40,3 +41,7 @@ const Modal = ({ toggleModal, children }) => {
 };
 
 export default Modal;
+
+Modal.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
+};
