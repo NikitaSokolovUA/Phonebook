@@ -37,7 +37,7 @@ export const ErrorMsg = styled.div`
   margin-left: 20px;
   font-size: 12px;
   letter-spacing: 0.03em;
-  color: #2f4f4f;
+  color: red;
 `;
 
 export const CheckBox = styled.label`
