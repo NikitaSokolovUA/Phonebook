@@ -1,26 +1,47 @@
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik, Form, ErrorMessage, Field } from 'formik';
 import PropTypes from 'prop-types';
-import * as yup from 'yup';
+import schemaContactForm from 'schema/schemaContactForm';
 import {
   ContactFormTitle,
-  FormContainer,
   Input,
-  SubmitButton,
+  MaskInput,
+  LabelName,
+  ButtonWrapper,
+  Btn,
+  ErrorMsg,
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
 
-const schema = yup.object().shape({
-  name: yup.string().required(),
-  number: yup.string().required().min(7, 'min 7 symbols').max(20),
-});
+const phoneNumberMask = [
+  '+',
+  '3',
+  '8',
+  ' ',
+  '(',
+  '0',
+  /\d/,
+  /\d/,
+  ')',
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+];
 
 const ContactForm = ({ toggleModal }) => {
   const InitialValues = {
     name: '',
     number: '',
   };
+
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
@@ -40,23 +61,48 @@ const ContactForm = ({ toggleModal }) => {
   };
 
   return (
-    <FormContainer>
+    <>
       <ContactFormTitle>Add new contact</ContactFormTitle>
       <Formik
         initialValues={InitialValues}
-        validationSchema={schema}
+        validationSchema={schemaContactForm}
         onSubmit={onSubmitForm}
       >
-        <Form>
-          <Input type="text" name="name" />
-          <ErrorMessage name="name" />
-          <Input type="text" name="number" />
-          <ErrorMessage name="number" />
+        {({ dirty, errors }) => (
+          <Form>
+            <LabelName htmlFor="name">Name</LabelName>
+            <Input type="text" name="name" id="name" error={errors.number} />
+            <ErrorMessage name="name">
+              {msg => <ErrorMsg>{msg}</ErrorMsg>}
+            </ErrorMessage>
 
-          <SubmitButton type="submit">Save</SubmitButton>
-        </Form>
+            <LabelName htmlFor="phone">Phone Number</LabelName>
+            <Field name="number">
+              {({ field }) => (
+                <MaskInput
+                  {...field}
+                  mask={phoneNumberMask}
+                  id="phone"
+                  placeholder="+38 (0__) ___-__-__"
+                  type="text"
+                  error={errors.number}
+                />
+              )}
+            </Field>
+            <ErrorMessage name="number">
+              {msg => <ErrorMsg>{msg}</ErrorMsg>}
+            </ErrorMessage>
+
+            <ButtonWrapper>
+              <Btn type="reset" disabled={!dirty}>
+                Reset
+              </Btn>
+              <Btn type="submit">Submit</Btn>
+            </ButtonWrapper>
+          </Form>
+        )}
       </Formik>
-    </FormContainer>
+    </>
   );
 };
 
