@@ -16,7 +16,9 @@ export const Overlay = styled.div`
 export const ModalWindow = styled.div`
   position: relative;
   background-color: white;
-  min-width: 600px;
+  min-width: 480px;
+  border-radius: 5px;
+  padding: 20px;
 `;
 
 export const CloseBtn = styled.button`
