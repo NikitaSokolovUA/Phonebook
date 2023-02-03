@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const User = styled.div`
   display: flex;
@@ -7,40 +8,85 @@ export const User = styled.div`
   margin-right: 40px;
 `;
 
+export const UserBox = styled.div`
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding: 20px;
+
+  background-color: #d2cccc;
+
+  transition: opacity 500ms;
+`;
+
 export const GreetText = styled.p`
-  font-weight: 300;
+  position: relative;
+  margin: 0;
+  padding: 10px 0;
+  font-weight: 500;
   font-size: 20px;
   line-height: 1.19;
   color: black;
+  text-transform: uppercase;
+
+  ::after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    color: #333;
+
+    border: 1px solid;
+  }
 `;
 
-export const GreetName = styled.span`
-  margin-left: 20px;
+export const ProfileLink = styled(Link)`
+  position: relative;
+  display: block;
+  margin: 20px 0;
   font-weight: 500;
-  font-size: 24px;
-  color: #2196f3;
-`;
-
-export const LogOutButton = styled.button`
-  min-width: 136px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  color: #212121;
-  background-color: #f5f4fa;
-  font-weight: 700;
-  line-height: 1.19;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 20px;
+  letter-spacing: 0.03em;
+  color: #333;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
-    background-color: #2196f3;
-    color: #ffffff;
-    box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%),
-      0px 2px 2px rgb(0 0 0 / 12%);
+    color: #f30;
+  }
+
+  ::after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -20px;
+    width: 100%;
+    color: #333;
+
+    border: 1px solid;
+  }
+`;
+
+export const LogOutButton = styled.button`
+  display: block;
+  padding: 20px 0 0 0;
+
+  border: none;
+  color: #333;
+  background-color: transparent;
+
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  :hover,
+  :focus {
+    color: #f30;
   }
 `;

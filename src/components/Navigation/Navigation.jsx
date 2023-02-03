@@ -2,7 +2,14 @@ import AuthNav from 'components/AuthNav';
 import UserMenu from 'components/UserMenu';
 import { useAuth } from 'hooks/useAuth';
 import { Outlet } from 'react-router-dom';
-import { Header, Link } from './Navigation.styled';
+// import { useEffect, useState } from 'react';
+import {
+  Container,
+  Header,
+  Link,
+  Logo,
+  NavContainer,
+} from './Navigation.styled';
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
@@ -10,9 +17,14 @@ const Navigation = () => {
   return (
     <>
       <Header>
-        <Link to={'/contacts'}>Contacts </Link>
+        <Container>
+          <Logo>Phonebook</Logo>
+          <NavContainer>
+            <Link to={'/contacts'}>Contacts </Link>
 
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          </NavContainer>
+        </Container>
       </Header>
       <Outlet />
     </>

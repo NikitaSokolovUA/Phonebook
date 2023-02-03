@@ -6,18 +6,10 @@ import {
   InputTitle,
   ErrorMsg,
 } from './LogInForm.styled';
-import * as yup from 'yup';
+import schemaLogin from 'schema/schemaLogin';
 import { login } from 'redux/auth/operation';
 import { useDispatch } from 'react-redux';
-
-const schema = yup.object().shape({
-  email: yup.string().required('Input Email'),
-  password: yup
-    .string()
-    .required('Password is Required')
-    .min(8, 'min 8 symbols')
-    .max(16),
-});
+import PasswordShowHide from 'components/PasswordShowHide';
 
 const LogInForm = () => {
   const dispatch = useDispatch();
@@ -31,7 +23,7 @@ const LogInForm = () => {
     <LogForm>
       <Formik
         initialValues={initialValues}
-        validationSchema={schema}
+        validationSchema={schemaLogin}
         onSubmit={handleSubmit}
       >
         <Form>
@@ -43,7 +35,7 @@ const LogInForm = () => {
           />
 
           <InputTitle>Password</InputTitle>
-          <Input type="password" name="password" />
+          <Input type="password" name="password" component={PasswordShowHide} />
           <ErrorMessage
             render={msg => <ErrorMsg>{msg}</ErrorMsg>}
             name="password"
