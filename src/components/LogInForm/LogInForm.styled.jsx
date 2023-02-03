@@ -7,8 +7,10 @@ export const LogForm = styled.div`
 `;
 
 export const InputTitle = styled.p`
+  margin-top: 20px;
+  margin-bottom: 5px;
   margin-left: 20px;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 0.03em;
   color: #333;
 `;

@@ -41,7 +41,7 @@ const LogInForm = () => {
             name="password"
           />
 
-          <SubmitButton>Log In</SubmitButton>
+          <SubmitButton>Sign</SubmitButton>
         </Form>
       </Formik>
     </LogForm>
