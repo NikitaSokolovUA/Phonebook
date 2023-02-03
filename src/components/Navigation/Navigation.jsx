@@ -2,6 +2,7 @@ import AuthNav from 'components/AuthNav';
 import UserMenu from 'components/UserMenu';
 import { useAuth } from 'hooks/useAuth';
 import { Outlet } from 'react-router-dom';
+// import { useEffect, useState } from 'react';
 import {
   Container,
   Header,

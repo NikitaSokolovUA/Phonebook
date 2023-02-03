@@ -2,14 +2,18 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const Header = styled.header`
+  /* position: fixed; */
+  width: 100%;
   background-color: #333;
+  opacity: 0.95;
 `;
 
 export const Container = styled.div`
+  position: relative;
+  display: flex;
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
 `;
 
 export const NavContainer = styled.div`
@@ -28,8 +32,8 @@ export const Logo = styled.p`
 `;
 
 export const Link = styled(NavLink)`
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 18px;
   line-height: 1.19;
 
   color: white;

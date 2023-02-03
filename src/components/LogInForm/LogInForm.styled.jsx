@@ -10,17 +10,17 @@ export const InputTitle = styled.p`
   margin-left: 20px;
   font-size: 20px;
   letter-spacing: 0.03em;
-  color: #2f4f4f;
+  color: #333;
 `;
 
 export const Input = styled(Field)`
-  padding-left: 20px;
+  padding: 10px 20px;
   width: 300px;
-  height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 0.06em;
+  background-color: transparent;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :focus-within {
@@ -37,7 +37,7 @@ export const ErrorMsg = styled.div`
   margin-left: 20px;
   font-size: 12px;
   letter-spacing: 0.03em;
-  color: #2f4f4f;
+  color: #b21f1f;
 `;
 
 export const SubmitButton = styled.button`
