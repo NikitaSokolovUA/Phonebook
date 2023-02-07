@@ -4,6 +4,6 @@ export const Cont = styled.div`
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  /* height: calc(100vh - 120px); */
+  height: calc(100vh - 120px);
   padding: 0 15px;
 `;
