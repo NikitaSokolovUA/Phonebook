@@ -5,6 +5,7 @@ export const LoginBox = styled.div`
   margin-right: auto;
   margin-left: auto;
   margin-top: calc((100vh - 600px) / 2);
+  margin-bottom: calc((100vh - 600px) / 2);
   padding: 50px 0;
 
   border-radius: 5px;
