@@ -13,6 +13,7 @@ const AuthByOther = () => {
     <AuthBox>
       <GoogleOAuthProvider>
         <GoogleLogin
+          type="icon"
           onSuccess={credentialResponse => {
             console.log(credentialResponse);
           }}
@@ -26,9 +27,9 @@ const AuthByOther = () => {
         autoLoad={true}
         callback={responseFacebook}
         render={renderProps => (
-          <btnFacebook onClick={renderProps.onClick}>
+          <button onClick={renderProps.onClick}>
             <FaFacebook />
-          </btnFacebook>
+          </button>
         )}
       />
     </AuthBox>
