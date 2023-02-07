@@ -1,4 +1,4 @@
-import AuthByOther from 'components/AuthByOther';
+// import AuthByOther from 'components/AuthByOther';
 import AuthNavBox from 'components/AuthNavBox';
 import Container from 'components/Container';
 import Footer from 'components/Footer';
@@ -19,7 +19,7 @@ const LogIn = () => {
             link={'/registration'}
             linkText={'Sign up'}
           />
-          <AuthByOther />
+          {/* <AuthByOther /> */}
         </LoginBox>
       </Container>
       <Footer />
