@@ -1,7 +1,8 @@
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import { useDispatch } from 'react-redux';
 import { registration } from 'redux/auth/operation';
-import * as yup from 'yup';
+import schemaRegisterForm from 'schema/schemaRegisterForm';
+import PasswordStrengthBar from 'react-password-strength-bar';
 import {
   Input,
   InputTitle,
@@ -11,21 +12,6 @@ import {
   CheckBox,
   CheckText,
 } from './RegistrationForm.styled';
-
-const schema = yup.object().shape({
-  name: yup.string().required(),
-  email: yup.string().required(),
-  password: yup
-    .string()
-    .required()
-    .min(8)
-    .matches(/[0-9]/, 'Password requires a number')
-    .matches(/[a-z]/, 'Password requires a lowercase letter')
-    .matches(/[A-Z]/, 'Password requires an uppercase letter'),
-  confirmPass: yup
-    .string()
-    .oneOf([yup.ref('password'), null], 'Password must Confirm'),
-});
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -53,7 +39,7 @@ const RegistrationForm = () => {
     <RegistForm>
       <Formik
         initialValues={initialValues}
-        validationSchema={schema}
+        validationSchema={schemaRegisterForm}
         onSubmit={handleSubmit}
       >
         {({ values }) => (
@@ -72,6 +58,7 @@ const RegistrationForm = () => {
             />
             <InputTitle>Password</InputTitle>
             <Input type="password" name="password" />
+            <PasswordStrengthBar password={values.password} />
             <ErrorMessage
               render={msg => <ErrorMsg>{msg}</ErrorMsg>}
               name="password"

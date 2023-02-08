@@ -3,9 +3,14 @@ import { Link } from 'react-router-dom';
 
 export const RegistrationBox = styled.div`
   width: 600px;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
+  margin-top: calc((100vh - 600px) / 2);
+  margin-bottom: calc((100vh - 600px) / 2);
   padding: 50px 0;
+
+  border-radius: 5px;
+  box-shadow: 7px 6px 11px 0px rgba(0, 0, 0, 0.73);
 `;
 
 export const RegistrationTitle = styled.h2`
